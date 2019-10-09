@@ -21,7 +21,7 @@ package cse360assign2;
 public class AddingMachine {
 
     private int total;
-
+    private String record;
 
     /**
      * <p>The constructor AddingMachine() creates an object of type AddingMachine and initializes the value of the
@@ -31,8 +31,10 @@ public class AddingMachine {
      * @author 1214241534
      * @filename AddingMachine.java
      */
-    public AddingMachine () {
+    public AddingMachine ()
+    {
         total = 0;  // not needed - included for clarity
+        record = "0 ";
     }
 
 
@@ -44,12 +46,13 @@ public class AddingMachine {
      * @filename AddingMachine.java
      */
     public int getTotal () {
-        return 0;
+        return this.total;
     }
 
 
     /**
-     * <p>Adds an integer value to the value stored in the private integer of an AddingMachine type object</p>
+     * <p>Adds an integer value to the value stored in the private integer of an AddingMachine type object.
+     * Updates record string store in AddingMachine class object</p>
      *
      * @author Kyle Stevens
      * @author 1214241534
@@ -58,12 +61,14 @@ public class AddingMachine {
      * @param value - determines the value which is added to the private integer stored in an AddingMachine object
      */
     public void add (int value) {
-
+        this.total = this.total + value;
+        record = record + "+ "+value+" ";
     }
 
 
     /**
-     * <p>Subtracts an integer value from the value stored in the private integer of an AddingMachine type object</p>
+     * <p>Subtracts an integer value from the value stored in the private integer of an AddingMachine type object.
+     * Updates record string store in AddingMachine class object</p>
      *
      * @author Kyle Stevens
      * @author 1214241534
@@ -72,20 +77,22 @@ public class AddingMachine {
      * @param value - determines the value which is subtracted from the stored private integer
      */
     public void subtract (int value) {
-
+        this.total = this.total - value;
+        record = record + "- "+value+" ";
     }
 
 
     /**
-     * <p>Returns a string value representing the integer value that was stored in the private data section of an
+     * <p>Returns the private string value that records all operations performed on the
      * AddingMachine object</p>
      *
      * @author Kyle Stevens
      * @author 1214241534
      * @filename AddingMachine.java
      */
-    public String toString () {
-        return "";
+    public String toString ()
+    {
+        return this.record;
     }
 
 
@@ -97,6 +104,7 @@ public class AddingMachine {
      * @filename AddingMachine.java
      */
     public void clear() {
-
+        this.total = 0;
+        this.record = "0 ";
     }
 }
