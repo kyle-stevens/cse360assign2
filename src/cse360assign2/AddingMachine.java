@@ -104,7 +104,6 @@ public class AddingMachine {
      * @filename AddingMachine.java
      */
     public void clear() {
-        this.total = 0;
-        this.record = "0 ";
+
     }
 }
