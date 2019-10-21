@@ -32,7 +32,8 @@ public class calculator extends AddingMachine {
     }
 
     /**
-     * <p>Divides an integer value into the value stored in the private integer of a calculator type object.
+     * <p>Divides an integer value into the value stored in the private integer of a calculator type object. Accounts
+     * for division by zero
      * Updates record string store in calculator class object</p>
      *
      * @author Kyle Stevens
@@ -42,12 +43,17 @@ public class calculator extends AddingMachine {
      * @param value - determines the value which is subtracted from the stored private integer
      */
     public void div(int value){
-        total = total / value;
+        if(value == 0){
+            total = 0;
+        }
+        else{
+            total = total / value;
+        }
         record = record + "/ " + value + " ";
     }
 
     /**
-     * <p>Raises the value store in a calculator type object by the parameter value</p>
+     * <p>Raises the value store in a calculator type object by the parameter value. Accounts for negative powers.</p>
      * <p>Updates record string store in calculator class object</p>
      *
      * @author Kyle Stevens
@@ -57,7 +63,12 @@ public class calculator extends AddingMachine {
      * @param value - determines the value which is subtracted from the stored private integer
      */
     public void power(int value){
-        total = total ^ value;
+        if (value < 0){
+            total = 0;
+        }
+        else{
+            total = total ^ value;
+        }
         record = record + "^ " + value + " ";
     }
 
