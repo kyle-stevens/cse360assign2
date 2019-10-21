@@ -20,8 +20,8 @@ package cse360assign2;
 
 public class AddingMachine {
 
-    private int total;
-    private String record;
+    protected int total;
+    protected String record;
 
     /**
      * <p>The constructor AddingMachine() creates an object of type AddingMachine and initializes the value of the
@@ -83,7 +83,7 @@ public class AddingMachine {
 
 
     /**
-     * <p>Returns the private string value that records all operations performed on the
+     * <p>Returns the protected string value that records all operations performed on the
      * AddingMachine object</p>
      *
      * @author Kyle Stevens
